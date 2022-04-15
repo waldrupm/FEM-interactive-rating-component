@@ -8,6 +8,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   <script src="js/main.js"></script>
 
   <title>Frontend Mentor | Interactive rating component</title>
@@ -17,41 +20,48 @@
 <body>
   <main class="main-box">
     <div class="rating-modal">
-      <span class="star-oval">
-        <img src="images/icon-star.svg" width="17px" height="16px" alt="star" />
-      </span>
-      <h2>How did we do?</h2>
+      <div id="rating-window">
+        <span class="star-oval">
+          <img src="images/icon-star.svg" width="17px" height="16px" alt="star" />
+        </span>
+        <h2>How did we do?</h2>
 
-      <!-- Rating state start -->
+        <!-- Rating state start -->
 
 
 
-      <p>Please let us know how we did with your support request. All feedback is appreciated
-        to help us improve our offering!</p>
+        <p>Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!</p>
 
-      <div class="rating-numbers">
-        <span class="rating-number">1</span>
-        <span class="rating-number">2</span>
-        <span class="rating-number">3</span>
-        <span class="rating-number">4</span>
-        <span class="rating-number">5</span>
+        <div class="rating-numbers">
+          <input name="ratings" type="radio" id="1" class="rating-number"><label class="for-rating"
+            for="1">1</label></input>
+          <input name="ratings" type="radio" id="2" class="rating-number"><label class="for-rating"
+            for="2">2</label></input>
+          <input name="ratings" type="radio" id="3" class="rating-number"><label class="for-rating"
+            for="3">3</label></input>
+          <input name="ratings" type="radio" id="4" class="rating-number"><label class="for-rating"
+            for="4">4</label></input>
+          <input name="ratings" type="radio" id="5" class="rating-number"><label class="for-rating"
+            for="5">5</label></input>
+        </div>
+
+        <button id="submit-rating">Submit</button>
+
       </div>
 
-      <button>Submit</button>
 
-      <!-- Rating state end -->
+      <div id="thanks">
+        <img class="thanks-img" src="images/illustration-thank-you.svg" alt="Thank you" />
 
-      <!-- Thank you state start -->
+        <span class="selected-box">You selected <span id="selected-num">4</span> out of 5</span>
 
-      <div class="thanks">
+        <h2>Thank you!</h2>
 
-        You selected
-        <!-- Add rating here --> out of 5
-
-        Thank you!
-
-        We appreciate you taking the time to give a rating. If you ever need more support,
-        don’t hesitate to get in touch!
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need more support,
+          don’t hesitate to get in touch!
+        </p>
 
         <!-- Thank you state end -->
       </div>

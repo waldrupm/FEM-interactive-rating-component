@@ -22,7 +22,7 @@ html {
   box-sizing: border-box;
   background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
   border-radius: 30px;
-  max-width: 412px;
+  max-width: 422px;
   padding: 32px;
 }
 
@@ -34,7 +34,7 @@ html {
   width: 44px;
   border: none;
   border-radius: 50%;
-  margin: 0px 0px 12px 0px;
+  margin: 0px 0px 28px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,40 +44,82 @@ html {
   font-size: 26px;
   line-height: 35px;
   color: #fff;
-  font-family: sans-serif;
+  font-family: 'Overpass', sans-serif;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin: 12px 0px 10px;
 }
 
-.rating-modal p {
+ p {
   font-weight: 400;
+  font-style: normal;
   font-size: 15px;
   line-height: 24px;
   color: var(--light-gray);
-  font-family: sans-serif;
-  margin-bottom: 14px;
+  font-family: 'Overpass', sans-serif;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+#rating-window {
+  display: box;
 }
 
 .rating-numbers {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  position: relative;
 }
 
-.rating-number {
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+ visibility: hidden;
+ position: absolute;
+ left: -9999px;
+ width: 0;
+ height: 0;
+}
+
+.rating-number:checked + label,
+.rating-number:not(:checked) + label {
   width: 50px;
   height: 50px;
   background-color: var(--dark-blue);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: var(--medium-gray);
   font-weight: 700;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 48px;
   font-family: sans-serif;
+  position: relative;
+  display: inline-block;
+  text-align:center;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.rating-number:checked + label:hover,
+.rating-number:not(:checked) + label:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--orange);
+}
+
+.rating-number:checked + label:before,
+.rating-number:not(:checked) + label:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  background-color: var(--medium-gray);
+  color: #fff;
+}
+
+.rating-number:checked + label {
+  background-color: var(--medium-gray);
+  z-index: 1;
+  color: #fff;
 }
 
 .rating-modal button {
@@ -90,11 +132,46 @@ html {
   color: white;
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   line-height: 19px;
   text-transform: uppercase;
 }
 
-.thanks {
+.rating-modal button:hover {
+  cursor: pointer;
+  color: var(--orange);
+  background-color: #fff;
+}
+
+#thanks {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
   display: none;
+}
+
+#thanks > .selected-box {
+  background-color: var(--dark-blue);
+  border-radius: 22.5px;
+  padding: 6px 20px;
+  color: var(--orange);
+  font-family: 'Overpass', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 18px 0px 24px 0px;
+}
+
+#thanks h2 {
+  font-size: 28px;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  line-height: 160%;
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+.thanks-img {
+  margin-top: 13px;
+  margin-bottom: 14px;
 }
