@@ -40,7 +40,7 @@ html {
   justify-content: center;
 }
 
-.rating-modal h2 {
+.rating-modal h1 {
   font-size: 26px;
   line-height: 35px;
   color: #fff;
@@ -162,7 +162,7 @@ html {
   margin: 18px 0px 24px 0px;
 }
 
-#thanks h2 {
+#thanks h1 {
   font-size: 28px;
   font-family: 'Overpass', sans-serif;
   font-weight: 700;
